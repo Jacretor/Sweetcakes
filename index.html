@@ -952,7 +952,7 @@
 
         function enviarCalculoWhatsApp() {
             if (!ultimoCalculoEvento) return;
-            const telefone = "258852210874";
+            const telefone = "258846135922";
             
             let msg = `👋 Olá, Sweet cakes!\n\nUsei a calculadora no site para o meu evento e gostaria de solicitar um orçamento:\n\n`;
             msg += `👥 *Nº de Convidados:* ${ultimoCalculoEvento.pessoas}\n`;
@@ -960,7 +960,7 @@
             msg += `📌 *Estimativa Gerada:*\n`;
             msg += `• *Salgados:* ${ultimoCalculoEvento.salgadosDuzias} dúzias\n`;
             msg += `• *Bolo:* ${ultimoCalculoEvento.boloSugerido}\n\n`;
-            msg += `💳 *Pagamento M-Pesa:* 852210874 (Olinda)\n\n`;
+            msg += `💳 *Pagamento M-Pesa:* 846135922 (Olinda)\n\n`;
             msg += `Gostaria de verificar disponibilidade para a minha data!`;
 
             window.open(`https://wa.me/${telefone}?text=${encodeURIComponent(msg)}`, '_blank');
