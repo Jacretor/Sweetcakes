@@ -241,14 +241,14 @@
                         <i class="fa-solid fa-magnifying-glass-plus text-white text-2xl"></i>
                     </div>
                 </div>
-                <div onclick="abrirZoom('imagens/combosalgados.jpeg')" class="relative overflow-hidden rounded-2xl aspect-square bg-gray-100 group shadow-sm hover:shadow-lg transition cursor-pointer">
-                    <img src="imagens/combosalgados.jpeg" onerror="tratarErroImagem(this)" alt="Salgados Variados - Sweet cakes" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                <div onclick="abrirZoom('imagens/salgados.jpeg')" class="relative overflow-hidden rounded-2xl aspect-square bg-gray-100 group shadow-sm hover:shadow-lg transition cursor-pointer">
+                    <img src="imagens/salgados.jpeg" onerror="tratarErroImagem(this)" alt="Salgados Fritos - Sweet cakes" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                     <div class="absolute inset-0 bg-magenta/30 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
                         <i class="fa-solid fa-magnifying-glass-plus text-white text-2xl"></i>
                     </div>
                 </div>
-                <div onclick="abrirZoom('imagens/mesadoces.jpeg')" class="relative overflow-hidden rounded-2xl aspect-square bg-gray-100 group shadow-sm hover:shadow-lg transition cursor-pointer">
-                    <img src="imagens/mesadoces.jpeg" onerror="tratarErroImagem(this)" alt="Sobremesas e Doces - Sweet cakes" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                <div onclick="abrirZoom('imagens/sobremesa.jpeg')" class="relative overflow-hidden rounded-2xl aspect-square bg-gray-100 group shadow-sm hover:shadow-lg transition cursor-pointer">
+                    <img src="imagens/sobremesa.jpeg" onerror="tratarErroImagem(this)" alt="Sobremesas - Sweet cakes" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                     <div class="absolute inset-0 bg-magenta/30 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
                         <i class="fa-solid fa-magnifying-glass-plus text-white text-2xl"></i>
                     </div>
@@ -257,477 +257,165 @@
         </div>
     </section>
 
-    <!-- CALCULADORA DE EVENTOS -->
-    <section id="calculadora" class="bg-gray-50 py-12 border-t border-gray-100">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center space-y-2 mb-8">
-                <span class="text-xs font-bold text-magenta uppercase tracking-wider">Simulador Rápido</span>
-                <h2 class="text-2xl sm:text-3xl font-extrabold text-magenta tracking-tight">Calculadora de Eventos</h2>
-                <p class="text-gray-500 text-xs sm:text-sm">Calcule a estimativa de salgados e tamanho de bolo ideal para o seu evento</p>
-                <div class="w-16 h-1 bg-magenta mx-auto rounded-full mt-2"></div>
-            </div>
-
-            <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-lg border border-magenta-soft space-y-6">
-                <form id="formCalculadora" onsubmit="calcularEvento(event)" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                        <label for="calcPessoas" class="block text-xs font-bold text-magenta uppercase tracking-wider mb-2">Nº de Convidados *</label>
-                        <input type="number" id="calcPessoas" min="1" placeholder="Ex: 25" required class="w-full p-3 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-magenta">
-                    </div>
-
-                    <div>
-                        <label for="calcTipo" class="block text-xs font-bold text-magenta uppercase tracking-wider mb-2">Tipo de Evento *</label>
-                        <select id="calcTipo" required class="w-full p-3 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-magenta">
-                            <option value="Aniversário">Aniversário</option>
-                            <option value="Casamento">Casamento / Baptizado</option>
-                            <option value="Corporativo">Evento Corporativo</option>
-                            <option value="Festa Infantil">Festa Infantil</option>
-                        </select>
-                    </div>
-
-                    <div class="sm:col-span-2 pt-2">
-                        <button type="submit" class="w-full bg-magenta hover:bg-magenta-dark text-white font-bold py-3.5 rounded-xl transition shadow-md flex items-center justify-center gap-2 text-xs sm:text-sm uppercase tracking-wide">
-                            <i class="fa-solid fa-wand-magic-sparkles"></i> Calcular Estimativa
-                        </button>
-                    </div>
-                </form>
-
-                <div id="resultadoCalculadora" class="hidden bg-magenta-light p-5 rounded-2xl border border-magenta-soft space-y-4">
-                    <h3 class="font-bold text-magenta text-sm sm:text-base border-b border-magenta-soft pb-2 flex items-center gap-2">
-                        <i class="fa-solid fa-clipboard-check"></i> Recomendação Sweet cakes:
-                    </h3>
-                    
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm">
-                        <div class="bg-white p-3 rounded-xl border border-magenta-soft">
-                            <strong class="text-gray-800 block">🥐 Salgados Sugeridos:</strong>
-                            <span id="resSalgados" class="text-magenta font-bold">0 dúzias</span>
-                        </div>
-                        <div class="bg-white p-3 rounded-xl border border-magenta-soft">
-                            <strong class="text-gray-800 block">🎂 Bolo Sugerido:</strong>
-                            <span id="resBolo" class="text-magenta font-bold">Forma F18</span>
-                        </div>
-                    </div>
-
-                    <button onclick="enviarCalculoWhatsApp()" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-xl shadow-md transition flex items-center justify-center gap-2 text-xs uppercase tracking-wide">
-                        <i class="fa-brands fa-whatsapp text-base"></i> Pedir Orçamento Deste Cálculo
+    <!-- CALCULADORA DE FESTA -->
+    <section id="calculadora" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="bg-gradient-to-r from-magenta-light to-white rounded-3xl p-6 sm:p-10 border-2 border-magenta-soft shadow-sm">
+            <div class="max-w-3xl mx-auto text-center space-y-4">
+                <span class="bg-magenta text-white text-[10px] sm:text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-widest inline-block">
+                    <i class="fa-solid fa-calculator mr-1"></i> Planeador Rápido
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900">Calculadora de Quantidade para Festas</h2>
+                <p class="text-gray-600 text-xs sm:text-sm">Insira a quantidade de convidados para obter uma estimativa recomendada de bolos e salgados.</p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
+                    <input type="number" id="num-convidados" min="1" placeholder="Nº de Convidados" class="w-full sm:w-64 px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:border-magenta font-semibold text-center text-sm">
+                    <button onclick="calcularFesta()" class="w-full sm:w-auto bg-magenta hover:bg-magenta-dark text-white font-bold px-6 py-3 rounded-xl transition text-sm flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> Calcular Estimativa
                     </button>
                 </div>
+
+                <div id="resultado-calculadora" class="hidden mt-6 p-4 bg-white rounded-2xl border border-magenta-soft shadow-sm text-left grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm">
+                    <div class="p-3 bg-magenta-light/50 rounded-xl">
+                        <span class="font-bold text-magenta block mb-1"><i class="fa-solid fa-cake-candles"></i> Tamanho Recomendado de Bolo:</span>
+                        <span id="calc-bolo" class="text-gray-700 font-medium">--</span>
+                    </div>
+                    <div class="p-3 bg-magenta-light/50 rounded-xl">
+                        <span class="font-bold text-magenta block mb-1"><i class="fa-solid fa-cookie"></i> Salgados Recomendados:</span>
+                        <span id="calc-salgados" class="text-gray-700 font-medium">--</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- SEÇÃO EXCLUSIVA DE CONTACTO & PAGAMENTO -->
-    <section id="contacto-secao" class="bg-gradient-to-b from-white to-magenta-light/50 py-12 border-t border-magenta-soft">
+    <!-- SECÇÃO DE CONTACTO -->
+    <section id="contacto-secao" class="bg-gray-900 text-white py-12 border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center space-y-2 mb-10">
-                <span class="bg-magenta text-white text-[10px] sm:text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-widest shadow-sm inline-block">
-                    <i class="fa-solid fa-paper-plane mr-1"></i> Fale Connosco
-                </span>
-                <h2 class="text-2xl sm:text-3xl font-extrabold text-magenta tracking-tight">Entre em Contacto</h2>
-                <p class="text-gray-600 text-xs sm:text-sm">Encomendas abertas! Faça o seu pedido com antecedência</p>
-                <div class="w-16 h-1 bg-magenta mx-auto rounded-full mt-2"></div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+                <div>
+                    <h3 class="text-xl font-black text-magenta mb-3 uppercase tracking-wider">Sweet cakes</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Confeitaria artesanal especializada em bolos personalizados, salgados, sobremesas e kits completos para festas e eventos.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-sm font-bold text-white mb-3 uppercase tracking-wider">Contactos Directos</h4>
+                    <ul class="text-xs text-gray-300 space-y-2">
+                        <li class="flex items-center justify-center md:justify-start gap-2">
+                            <i class="fa-solid fa-phone text-magenta"></i>
+                            <a href="tel:846135922" class="hover:underline">+258 84 613 5922</a>
+                        </li>
+                        <li class="flex items-center justify-center md:justify-start gap-2">
+                            <i class="fa-brands fa-whatsapp text-emerald-400"></i>
+                            <a href="https://wa.me/258846135922" target="_blank" class="hover:underline">+258 84 613 5922</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-bold text-white mb-3 uppercase tracking-wider">Atendimento</h4>
+                    <p class="text-xs text-gray-300">Segunda a Sábado: 08h00 - 18h00</p>
+                    <p class="text-xs text-gray-400 mt-1">Encomendas com antecedência mínima recomendada de 24h a 48h.</p>
+                </div>
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-6xl mx-auto mb-8">
-                <!-- TELEFONE / WHATSAPP -->
-                <div class="bg-white p-6 rounded-2xl border border-magenta-soft shadow-sm hover:shadow-md transition text-center space-y-3">
-                    <div class="w-12 h-12 bg-magenta-light rounded-full flex items-center justify-center mx-auto text-magenta text-xl">
-                        <i class="fa-solid fa-phone"></i>
-                    </div>
-                    <h3 class="font-bold text-gray-900 text-base">Telefone & WhatsApp</h3>
-                    <p class="text-xs text-gray-500">Atendimento rápido para encomendas</p>
-                    <a href="https://wa.me/258852210874" target="_blank" class="inline-block font-extrabold text-magenta hover:text-magenta-dark text-sm tracking-wide">
-                        +258 85 221 0874
-                    </a>
-                </div>
-
-                <!-- PAGAMENTO M-PESA -->
-                <div class="bg-white p-6 rounded-2xl border-2 border-magenta rounded-2xl shadow-sm hover:shadow-md transition text-center space-y-3">
-                    <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto text-red-600 text-xl font-black">
-                        M
-                    </div>
-                    <h3 class="font-bold text-gray-900 text-base">Método de Pagamento</h3>
-                    <p class="text-xs text-gray-500">M-Pesa para confirmação das encomendas</p>
-                    <div class="bg-magenta-light p-2 rounded-xl text-xs space-y-1">
-                        <p class="font-extrabold text-magenta text-sm">852210874</p>
-                        <p class="font-bold text-gray-700">Nome: Olinda</p>
-                    </div>
-                </div>
-
-                <!-- LOCALIZAÇÃO -->
-                <div class="bg-white p-6 rounded-2xl border border-magenta-soft shadow-sm hover:shadow-md transition text-center space-y-3">
-                    <div class="w-12 h-12 bg-magenta-light rounded-full flex items-center justify-center mx-auto text-magenta text-xl">
-                        <i class="fa-solid fa-location-dot"></i>
-                    </div>
-                    <h3 class="font-bold text-gray-900 text-base">Nossa Localização</h3>
-                    <p class="text-xs text-gray-500">Levantamento ou entrega ao domicílio</p>
-                    <span class="inline-block font-extrabold text-gray-800 text-sm">
-                        Matola Rio, Paragem Mozal
-                    </span>
-                </div>
-
-                <!-- TAXA DE PASSAGEM -->
-                <div class="bg-white p-6 rounded-2xl border border-magenta-soft shadow-sm hover:shadow-md transition text-center space-y-3">
-                    <div class="w-12 h-12 bg-magenta-light rounded-full flex items-center justify-center mx-auto text-magenta text-xl">
-                        <i class="fa-solid fa-truck-ramp-box"></i>
-                    </div>
-                    <h3 class="font-bold text-gray-900 text-base">Taxa de Passagem</h3>
-                    <p class="text-xs text-gray-500">Serviço de entrega ao domicílio</p>
-                    <span class="inline-block font-extrabold text-magenta text-sm">
-                        150 MZN
-                    </span>
-                </div>
+            <div class="mt-8 pt-6 border-t border-gray-800 text-center text-xs text-gray-500">
+                &copy; 2026 Sweet cakes. Todos os direitos reservados.
             </div>
         </div>
     </section>
 
-    <!-- MODAL DE ZOOM / LIGHTBOX -->
-    <div id="modalZoom" class="fixed inset-0 bg-black/90 z-50 hidden flex items-center justify-center p-4 backdrop-blur-md cursor-zoom-out" onclick="fecharZoom()">
-        <button onclick="fecharZoom()" class="absolute top-5 right-5 text-white/80 hover:text-white text-3xl z-50 p-2"><i class="fa-solid fa-xmark"></i></button>
-        <img id="imgModalZoom" src="" alt="Imagem Ampliada" class="max-w-full max-h-[90vh] object-contain rounded-xl shadow-2xl transition-transform duration-300">
+    <!-- BARRA FIXA DE NAVEGAÇÃO INFERIOR PARA MOBILE -->
+    <div class="md:hidden fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-magenta-soft py-2 px-4 z-40 flex justify-around items-center shadow-lg">
+        <a href="#inicio" class="flex flex-col items-center text-gray-600 hover:text-magenta text-[10px] font-bold">
+            <i class="fa-solid fa-house text-base"></i> Início
+        </a>
+        <a href="#combos" class="flex flex-col items-center text-magenta text-[10px] font-bold">
+            <i class="fa-solid fa-gift text-base"></i> Kits
+        </a>
+        <a href="#cardapio" class="flex flex-col items-center text-gray-600 hover:text-magenta text-[10px] font-bold">
+            <i class="fa-solid fa-list text-base"></i> Tabela
+        </a>
+        <button onclick="toggleCarrinho()" class="flex flex-col items-center text-magenta text-[10px] font-bold relative">
+            <i class="fa-solid fa-cart-shopping text-base"></i> Pedido
+            <span id="cart-count-mobile" class="absolute -top-1 -right-2 bg-magenta text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+        </button>
     </div>
 
-    <!-- MODAL DE PERSONALIZAÇÃO -->
-    <div id="modalOpcoes" class="fixed inset-0 bg-black/70 z-50 hidden flex items-center justify-center p-3 sm:p-4 backdrop-blur-sm">
-        <div class="bg-white rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl transform transition-all flex flex-col max-h-[90vh]">
-            <div class="relative bg-magenta text-white p-4 sm:p-5 flex items-center justify-between">
-                <h3 id="modalOpcoesTitulo" class="font-bold text-base sm:text-lg text-white">Personalizar Produto</h3>
-                <button onclick="fecharModalOpcoes()" class="text-white/80 hover:text-white text-xl p-1"><i class="fa-solid fa-xmark"></i></button>
-            </div>
-            
-            <div class="p-4 sm:p-6 overflow-y-auto space-y-4 flex-1" id="modalOpcoesCorpo"></div>
-
-            <div class="p-4 sm:p-5 border-t border-gray-100 bg-gray-50 flex items-center justify-between gap-3">
-                <div>
-                    <span class="text-[10px] sm:text-xs text-gray-400 block">Preço Total</span>
-                    <span id="modalOpcoesPreco" class="text-lg sm:text-xl font-extrabold text-magenta">0 MZN</span>
+    <!-- MODAL DO CARRINHO DE COMPRAS -->
+    <div id="modal-carrinho" class="fixed inset-0 bg-black/60 z-50 hidden backdrop-blur-sm transition-opacity flex justify-end">
+        <div class="bg-white w-full max-w-md h-full shadow-2xl flex flex-col justify-between p-6 overflow-y-auto">
+            <div>
+                <div class="flex justify-between items-center pb-4 border-b border-gray-100">
+                    <h3 class="text-lg font-black text-magenta flex items-center gap-2">
+                        <i class="fa-solid fa-cart-shopping"></i> Seu Pedido
+                    </h3>
+                    <button onclick="toggleCarrinho()" class="text-gray-400 hover:text-gray-600 p-2 text-xl font-bold">&times;</button>
                 </div>
-                <button onclick="confirmarAdicaoCarrinho()" class="bg-magenta hover:bg-magenta-dark text-white px-5 py-3 rounded-xl font-bold text-xs sm:text-sm transition shadow-md flex items-center gap-2">
-                    <i class="fa-solid fa-cart-plus"></i> Adicionar
+
+                <div id="itens-carrinho" class="py-4 space-y-3">
+                    <p class="text-xs text-gray-500 text-center py-8">Seu carrinho está vazio no momento.</p>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-100 pt-4 space-y-3">
+                <div class="flex justify-between items-center text-base font-extrabold">
+                    <span>Total Estimado:</span>
+                    <span id="total-carrinho" class="text-magenta">0 Mt</span>
+                </div>
+                
+                <div class="space-y-2">
+                    <input type="text" id="cliente-nome" placeholder="Seu Nome Completo" class="w-full text-xs p-3 rounded-xl border border-gray-200 outline-none focus:border-magenta">
+                    <input type="text" id="cliente-endereco" placeholder="Endereço de Entrega ou Ponto de Referência" class="w-full text-xs p-3 rounded-xl border border-gray-200 outline-none focus:border-magenta">
+                    <textarea id="cliente-obs" placeholder="Observações (ex: Tema do bolo, sabores das coxinhas...)" class="w-full text-xs p-3 rounded-xl border border-gray-200 outline-none focus:border-magenta h-20 resize-none"></textarea>
+                </div>
+
+                <button onclick="enviarPedidoWhatsApp()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 rounded-xl transition text-xs flex items-center justify-center gap-2 shadow-md">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> Enviar Pedido via WhatsApp
                 </button>
             </div>
         </div>
     </div>
 
-    <!-- DRAWER / MODAL DO CARRINHO -->
-    <div id="carrinho-modal" class="fixed inset-0 bg-black/60 z-50 hidden transition-opacity duration-300 flex justify-end">
-        <div class="bg-white w-full max-w-md h-full shadow-2xl flex flex-col justify-between transform transition-transform duration-300">
-            <div class="p-4 sm:p-5 border-b border-gray-100 flex items-center justify-between bg-magenta text-white">
-                <div class="flex items-center gap-3">
-                    <i class="fa-solid fa-basket-shopping text-white text-xl"></i>
-                    <h3 class="font-bold text-base sm:text-lg">Seu Pedido</h3>
-                </div>
-                <button onclick="toggleCarrinho()" class="text-white/80 hover:text-white text-xl p-1"><i class="fa-solid fa-xmark"></i></button>
-            </div>
-
-            <div class="p-4 sm:p-5 overflow-y-auto flex-1 space-y-3" id="itens-carrinho"></div>
-
-            <div class="p-4 sm:p-5 border-t border-gray-100 bg-gray-50 space-y-4">
-                <!-- INFORMAÇÃO DE PAGAMENTO DENTRO DO CARRINHO -->
-                <div class="bg-magenta-light/60 p-3 rounded-xl border border-magenta-soft text-xs space-y-1">
-                    <span class="block font-bold text-magenta uppercase tracking-wider">💳 Método de Pagamento (M-Pesa):</span>
-                    <p class="text-gray-700"><strong>Número:</strong> 852210874 | <strong>Nome:</strong> Olinda</p>
-                </div>
-
-                <div class="bg-white p-3 rounded-xl border border-gray-200 space-y-2">
-                    <span class="block text-xs font-bold text-magenta uppercase tracking-wider">Forma de Entrega:</span>
-                    <div class="grid grid-cols-2 gap-2 text-xs">
-                        <label class="flex items-center gap-2 p-2 border rounded-lg cursor-pointer bg-gray-50 hover:border-magenta">
-                            <input type="radio" name="opcaoEntrega" value="retirada" checked onchange="atualizarTotalCarrinho()" class="accent-magenta">
-                            <span>Retirada no Local</span>
-                        </label>
-                        <label class="flex items-center gap-2 p-2 border rounded-lg cursor-pointer bg-gray-50 hover:border-magenta">
-                            <input type="radio" name="opcaoEntrega" value="delivery" onchange="atualizarTotalCarrinho()" class="accent-magenta">
-                            <span>Delivery (+150 MZN)</span>
-                        </label>
-                    </div>
-                </div>
-
-                <div class="space-y-1">
-                    <div class="flex justify-between text-xs text-gray-500">
-                        <span>Subtotal:</span>
-                        <span id="subtotal-carrinho">0 MZN</span>
-                    </div>
-                    <div class="flex justify-between text-xs text-gray-500" id="linha-taxa-delivery">
-                        <span>Taxa de Passagem:</span>
-                        <span id="taxa-delivery-valor">0 MZN</span>
-                    </div>
-                    <div class="flex items-center justify-between text-base font-bold text-gray-800 pt-1 border-t border-gray-200">
-                        <span>Total Final:</span>
-                        <span id="total-carrinho" class="text-xl text-magenta font-extrabold">0 MZN</span>
-                    </div>
-                </div>
-
-                <button onclick="enviarPedidoWhatsApp()" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3.5 rounded-xl shadow-lg transition flex items-center justify-center gap-2 text-xs sm:text-sm uppercase tracking-wide">
-                    <i class="fa-brands fa-whatsapp text-lg"></i> Finalizar no WhatsApp
-                </button>
-            </div>
-        </div>
+    <!-- MODAL DE ZOOM DA GALERIA -->
+    <div id="modal-zoom" class="fixed inset-0 bg-black/90 z-50 hidden backdrop-blur-md flex items-center justify-center p-4" onclick="fecharZoom()">
+        <img id="img-zoom" src="" alt="Zoom" class="max-w-full max-h-[90vh] rounded-2xl object-contain shadow-2xl">
     </div>
 
-    <!-- BOTÃO FLUTUANTE DO WHATSAPP -->
-    <a href="https://wa.me/258852210874?text=Ol%C3%A1!%20Estou%20no%20site%20da%20Sweet%20cakes%20e%20gostaria%20de%20fazer%20uma%20encomenda." 
-       target="_blank" 
-       rel="noopener noreferrer" 
-       class="fixed bottom-20 right-4 md:bottom-6 md:right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-3.5 md:px-5 md:py-3 rounded-full shadow-2xl transition-all duration-300 flex items-center gap-2 group hover:scale-105 active:scale-95 border-2 border-white"
-       aria-label="Atendimento via WhatsApp">
-        <i class="fa-brands fa-whatsapp text-2xl md:text-2xl"></i>
-        <span class="hidden md:inline font-bold text-xs uppercase tracking-wider">Fazer Encomenda</span>
-    </a>
-
-    <!-- BARRA DE MENU FLUTUANTE (MOBILE NAVIGATION BAR) -->
-    <nav class="fixed bottom-3 left-4 right-4 z-40 bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl border border-magenta-soft p-1.5 md:hidden">
-        <div class="flex justify-around items-center">
-            <a href="#inicio" class="flex flex-col items-center py-1 px-2 text-gray-600 hover:text-magenta transition text-center">
-                <i class="fa-solid fa-house text-base"></i>
-                <span class="text-[10px] font-semibold mt-0.5">Início</span>
-            </a>
-            <a href="#combos" class="flex flex-col items-center py-1 px-2 text-magenta font-bold transition text-center">
-                <i class="fa-solid fa-gift text-base"></i>
-                <span class="text-[10px] font-semibold mt-0.5">Kits</span>
-            </a>
-            <a href="#cardapio" class="flex flex-col items-center py-1 px-2 text-gray-600 hover:text-magenta transition text-center">
-                <i class="fa-solid fa-list text-base"></i>
-                <span class="text-[10px] font-semibold mt-0.5">Preços</span>
-            </a>
-            <button onclick="toggleCarrinho()" class="relative flex flex-col items-center py-1 px-2 text-magenta font-bold transition text-center">
-                <i class="fa-solid fa-basket-shopping text-base"></i>
-                <span class="text-[10px] font-semibold mt-0.5">Pedido</span>
-                <span id="cart-count-float" class="absolute -top-1 -right-1 bg-magenta text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center border border-white">0</span>
-            </button>
-        </div>
-    </nav>
-
-    <!-- FOOTER COM LOGOTIPO E CONTACTOS -->
-    <footer id="contacto" class="bg-gradient-to-b from-magenta to-magenta-dark text-white pt-12 pb-16 md:pb-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
-            <div class="space-y-3 flex flex-col items-center md:items-start">
-                <div class="flex items-center gap-3">
-                    <img src="imagens/logo.jpg" onerror="this.onerror=null; this.src='https://via.placeholder.com/150x150/e20074/FFFFFF?text=Sweet+Cakes';" alt="Sweet cakes Logo Rodapé" class="h-12 w-auto object-contain bg-white rounded-full p-1 border border-magenta-soft">
-                    <h3 class="text-2xl font-extrabold tracking-wide text-white uppercase">Sweet cakes</h3>
-                </div>
-                <p class="text-magenta-light text-xs sm:text-sm leading-relaxed">Bolos artesanais, salgados irresistíveis e combos completos para adoçar as suas celebrações.</p>
-            </div>
-            
-            <div class="space-y-3">
-                <h4 class="text-xs font-bold uppercase text-white tracking-wider">Contactos & Localização</h4>
-                <p class="text-magenta-light text-xs sm:text-sm"><i class="fa-solid fa-location-dot mr-2"></i> Matola Rio, Paragem Mozal</p>
-                <p class="text-magenta-light text-xs sm:text-sm"><i class="fa-solid fa-phone mr-2"></i> +258 85 221 0874</p>
-                <p class="text-magenta-light text-xs sm:text-sm"><i class="fa-solid fa-credit-card mr-2"></i> M-Pesa: 852210874 (Olinda)</p>
-            </div>
-
-            <div class="space-y-3">
-                <h4 class="text-xs font-bold uppercase text-white tracking-wider">Redes Sociais & Encomendas</h4>
-                <div class="flex justify-center md:justify-start gap-4 text-2xl pt-1">
-                    <a href="https://wa.me/258852210874" target="_blank" class="hover:text-amber-300 transition text-white" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-                    <a href="https://facebook" target="_blank" class="hover:text-amber-300 transition text-white" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="https://instagram" target="_blank" class="hover:text-amber-300 transition text-white" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                </div>
-            </div>
-        </div>
-
-        <hr class="border-white/20 my-8 max-w-7xl mx-auto">
-        <div class="text-center text-xs text-magenta-light">&copy; 2026 Sweet cakes. Todos os direitos reservados.</div>
-    </footer>
-
-    <!-- SCRIPTS JS -->
+    <!-- SCRIPT DA APLICAÇÃO -->
     <script>
-        // LISTA DE PRODUTOS COMPLETA DA SWEET CAKES
-        const produtosAginaSabores = [
-            // BOLOS
-            {
-                id: 1,
-                nome: "Bolo de Aniversário Forma F18",
-                categoria: "bolos",
-                precoBase: 1350,
-                descricao: "Bolo personalizado artesanal no tamanho F18, ideal para celebrações íntimas.",
-                imagens: ["imagens/boloaniver.jpeg", "imagens/boloaniver3.jpeg"]
-            },
-            {
-                id: 2,
-                nome: "Bolo de Aniversário Forma F20",
-                categoria: "bolos",
-                precoBase: 1500,
-                descricao: "Bolo personalizado no tamanho F20 com opções de massa fofinha e recheios saborosos.",
-                imagens: ["imagens/boloaniver3.jpeg", "imagens/boloaniver4.jpeg"]
-            },
-            {
-                id: 3,
-                nome: "Bolo de Aniversário Forma F22",
-                categoria: "bolos",
-                precoBase: 2500,
-                descricao: "Bolo de festa tamanho F22 para servir a família e convidados com elegância.",
-                imagens: ["imagens/boloparaeventos.jpeg", "imagens/boloaniver8.jpeg"]
-            },
-            {
-                id: 4,
-                nome: "Bolo de Aniversário Forma F26",
-                categoria: "bolos",
-                precoBase: 3000,
-                descricao: "Bolo de grande porte tamanho F26, perfeito para festas de aniversário e eventos.",
-                imagens: ["imagens/boloaniver8.jpeg"]
-            },
-            {
-                id: 5,
-                nome: "Bolo de Aniversário Forma F30",
-                categoria: "bolos",
-                precoBase: 3500,
-                descricao: "Bolo extra grande tamanho F30 para grands festas e celebrações especiais.",
-                imagens: ["imagens/boloaniver.jpeg"]
-            },
-
-            // SALGADOS
-            {
-                id: 6,
-                nome: "Salgados Fritos (Por Dúzia)",
-                categoria: "salgados",
-                precoBase: 250,
-                descricao: "Chamuças de carne, rissóis de peixe/camarão, pastéis e enroladinhos de salsicha crocantes.",
-                imagens: ["imagens/combosalgados.jpeg", "imagens/salg1.jpeg"]
-            },
-            
-
-            // SOBREMESAS
-            {
-                id: 8,
-                nome: "Taça de Sobremesa Mini",
-                categoria: "sobremesas",
-                precoBase: 600,
-                descricao: "Deliciosa taça de sobremesa no tamanho Mini.",
-                imagens: ["imagens/mesadoces.jpeg"]
-            },
-            {
-                id: 9,
-                nome: "Taça de Sobremesa Média",
-                categoria: "sobremesas",
-                precoBase: 1200,
-                descricao: "Deliciosa taça de sobremesa no tamanho Média.",
-                imagens: ["imagens/mesadoces.jpeg"]
-            },
-            {
-                id: 10,
-                nome: "Taça de Sobremesa Grande",
-                categoria: "sobremesas",
-                precoBase: 1500,
-                descricao: "Taça de sobremesa tamanho Grande recheada de sabor.",
-                imagens: ["imagens/mesadoces.jpeg"]
-            },
-
-            // ALUGUER
-            {
-                id: 11,
-                nome: "Aluguer: Chapéu de Sol",
-                categoria: "aluguer",
-                precoBase: 350,
-                descricao: "Serviço de aluguer de chapéu de sol por dia.",
-                imagens: ["imagens/buffemesa1.jpeg"]
-            },
-            {
-                id: 12,
-                nome: "Aluguer: Toalhas de Mesa",
-                categoria: "aluguer",
-                precoBase: 100,
-                descricao: "Serviço de aluguer de toalhas de mesa por unidade.",
-                imagens: ["imagens/buffemesa2.jpeg"]
-            }
+        // BASE DE DADOS DOS PRODUTOS
+        const produtos = [
+            { id: 1, nome: "Bolo F18 (1 Recheio)", categoria: "bolos", preco: 1200, desc: "Servimentos aproximados para pequenas comemorações", img: "imagens/boloaniver.jpeg" },
+            { id: 2, nome: "Bolo F20 (1 Recheio)", categoria: "bolos", preco: 1500, desc: "Bolo ideal para festas de porte médio", img: "imagens/boloaniver3.jpeg" },
+            { id: 3, nome: "Bolo F22 (2 Recheios)", categoria: "bolos", preco: 2000, desc: "Bolo ideal para eventos com até 20 pessoas", img: "imagens/boloaniver.jpeg" },
+            { id: 4, nome: "Bolo F26 (2 Recheios)", categoria: "bolos", preco: 2800, desc: "Bolo de grande porte para celebrações amplas", img: "imagens/boloaniver3.jpeg" },
+            { id: 5, nome: "Salgados Fritos (Dúzia)", categoria: "salgados", preco: 250, desc: "Coxinhas, rissóis de camarão, pastéis e folhados", img: "imagens/salgados.jpeg" },
+            { id: 6, nome: "Salgados Assados (Dúzia)", categoria: "salgados", preco: 300, desc: "Empadas, mini quiches e enrobolados assados", img: "imagens/salgados.jpeg" },
+            { id: 7, nome: "Sobremesa Gelada P", categoria: "sobremesas", preco: 450, desc: "Mousse ou pudim em recipiente pequeno", img: "imagens/sobremesa.jpeg" },
+            { id: 8, nome: "Sobremesa Gelada M", categoria: "sobremesas", preco: 750, desc: "Mousse ou pudim em recipiente médio", img: "imagens/sobremesa.jpeg" },
+            { id: 9, nome: "Aluguer de Suporte de Bolos", categoria: "aluguer", preco: 350, desc: "Boleiras e suportes decorativos para mesa", img: "imagens/logo.jpg" }
         ];
 
-        let categoriaAtual = 'todos';
-        let indicesImagensAtivas = {};
         let carrinho = [];
-        let produtoSelecionadoTemp = null;
-        let precoCalculadoTemp = 0;
-        let timerSlideshow = null;
-        let ultimoCalculoEvento = null;
-
-        const IMG_FALLBACK = "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500&auto=format&fit=crop";
-
-        document.addEventListener("DOMContentLoaded", () => {
-            renderizarProdutos(produtosAginaSabores);
-            iniciarSlideshowAutomatico();
-        });
-
-        function tratarErroImagem(imgElement) {
-            imgElement.onerror = null;
-            imgElement.src = IMG_FALLBACK;
-        }
-
-        function abrirZoom(src) {
-            const modal = document.getElementById('modalZoom');
-            const img = document.getElementById('imgModalZoom');
-            img.src = src;
-            modal.classList.remove('hidden');
-        }
-
-        function fecharZoom() {
-            document.getElementById('modalZoom').classList.add('hidden');
-        }
-
-        function iniciarSlideshowAutomatico() {
-            if (timerSlideshow) clearInterval(timerSlideshow);
-            timerSlideshow = setInterval(() => {
-                produtosAginaSabores.forEach(produto => {
-                    if (produto.imagens && produto.imagens.length > 1) {
-                        mudarFotoCard(produto.id, 1, false);
-                    }
-                });
-            }, 3500);
-        }
 
         function renderizarProdutos(lista) {
             const container = document.getElementById('lista-produtos');
-            container.innerHTML = "";
-
-            if (!lista || lista.length === 0) {
-                container.innerHTML = `<p class="col-span-full text-center text-gray-400 italic py-12 text-sm">Nenhum produto encontrado nesta categoria.</p>`;
-                return;
-            }
+            container.innerHTML = '';
 
             lista.forEach(p => {
-                const fotosArray = p.imagens && p.imagens.length > 0 ? p.imagens : [IMG_FALLBACK];
-                const pId = p.id;
-                if (indicesImagensAtivas[pId] === undefined) indicesImagensAtivas[pId] = 0;
-
                 const card = document.createElement('div');
-                card.className = "bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-gray-100 flex flex-col justify-between transition-all duration-300 group";
-
-                let indicadoresHTML = "";
-                if (fotosArray.length > 1) {
-                    indicadoresHTML = `
-                        <div id="dots-${pId}" class="absolute bottom-2 left-0 right-0 flex justify-center gap-1.5 z-10">
-                            ${fotosArray.map((_, idx) => `
-                                <span class="dot-${pId} w-2 h-2 rounded-full transition-all duration-300${idx === indicesImagensAtivas[pId] ? 'bg-magenta w-5' : 'bg-white/70'}"></span>
-                            `).join('')}
-                        </div>
-                    `;
-                }
-
+                card.className = "bg-white rounded-2xl overflow-hidden border border-magenta-soft shadow-sm hover:shadow-md transition flex flex-col justify-between p-4";
                 card.innerHTML = `
                     <div>
-                        <div class="relative overflow-hidden aspect-[4/3] bg-gray-50 group/img">
-                            <img id="img-slide-${pId}" src="${fotosArray[indicesImagensAtivas[pId]]}" onerror="tratarErroImagem(this)" onclick="abrirZoom(this.src)" alt="${p.nome}" class="img-fade w-full h-full object-cover group-hover:scale-105 cursor-zoom-in">
-                            <span class="absolute top-3 right-3 bg-magenta text-white text-[10px] font-bold px-2.5 py-1 rounded-md uppercase tracking-wider z-10">${p.categoria}</span>
-                            
-                            ${fotosArray.length > 1 ? `
-                                <button onclick="mudarFotoCard(${pId}, -1, true)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-magenta text-white w-7 h-7 rounded-full flex items-center justify-center text-xs z-20 transition">
-                                    <i class="fa-solid fa-chevron-left"></i>
-                                </button>
-                                <button onclick="mudarFotoCard(${pId}, 1, true)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-magenta text-white w-7 h-7 rounded-full flex items-center justify-center text-xs z-20 transition">
-                                    <i class="fa-solid fa-chevron-right"></i>
-                                </button>
-                                ${indicadoresHTML}
-                            ` : ''}
+                        <div class="w-full h-40 bg-gray-100 rounded-xl overflow-hidden mb-3 relative">
+                            <img src="${p.img}" onerror="tratarErroImagem(this)" onclick="abrirZoom('${p.img}')" alt="${p.nome}" class="w-full h-full object-cover cursor-pointer hover:scale-105 transition duration-300">
                         </div>
-                        <div class="p-4 sm:p-5 space-y-1.5">
-                            <h3 class="text-base font-bold text-gray-900 group-hover:text-magenta transition-colors">${p.nome}</h3>
-                            <p class="text-gray-500 text-xs leading-relaxed line-clamp-3">${p.descricao}</p>
-                        </div>
+                        <span class="text-[10px] font-extrabold uppercase tracking-wider text-magenta bg-magenta-light px-2.5 py-0.5 rounded-full inline-block mb-1">${p.categoria}</span>
+                        <h3 class="font-bold text-gray-900 text-sm mb-1">${p.nome}</h3>
+                        <p class="text-xs text-gray-500 mb-3 line-clamp-2">${p.desc}</p>
                     </div>
-                    <div class="p-4 sm:p-5 pt-0 flex items-center justify-between mt-2">
-                        <div>
-                            <span class="text-[10px] text-gray-400 block">Preço</span>
-                            <span class="text-base sm:text-lg font-extrabold text-magenta">${parseFloat(p.precoBase).toLocaleString('pt-MZ')} MZN</span>
-                        </div>
-                        <button onclick="adicionarDireto(${p.id})" class="bg-magenta hover:bg-magenta-dark text-white px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-xl font-semibold text-xs transition duration-300 flex items-center gap-2 shadow-sm">
+                    <div class="flex items-center justify-between border-t border-gray-100 pt-3">
+                        <span class="font-black text-magenta text-base">${p.preco} Mt</span>
+                        <button onclick="adicionarAoCarrinho(${p.id})" class="bg-magenta hover:bg-magenta-dark text-white px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1 shadow-sm">
                             <i class="fa-solid fa-cart-plus"></i> Adicionar
                         </button>
                     </div>
@@ -736,251 +424,190 @@
             });
         }
 
-        function mudarFotoCard(id, direcao, interacaoManual = false) {
-            const produto = produtosAginaSabores.find(p => p.id === id);
-            if (!produto) return;
-            const imgElement = document.getElementById(`img-slide-${id}`);
-            if (!imgElement) return;
-
-            const fotos = produto.imagens && produto.imagens.length > 0 ? produto.imagens : [IMG_FALLBACK];
-            let index = indicesImagensAtivas[id] + direcao;
-
-            if (index >= fotos.length) index = 0;
-            if (index < 0) index = fotos.length - 1;
-
-            indicesImagensAtivas[id] = index;
-
-            imgElement.style.opacity = '0.3';
-            setTimeout(() => {
-                imgElement.src = fotos[index];
-                imgElement.style.opacity = '1';
-            }, 150);
-
-            const dots = document.querySelectorAll(`.dot-${id}`);
-            dots.forEach((dot, idx) => {
-                dot.className = `dot-${id} ${idx === index ? 'w-5 h-2 rounded-full transition-all duration-300 bg-magenta' : 'w-2 h-2 rounded-full transition-all duration-300 bg-white/70'}`;
-            });
-
-            if (interacaoManual) iniciarSlideshowAutomatico();
-        }
-
         function filtrarCategoria(cat, btn) {
-            categoriaAtual = cat;
             document.querySelectorAll('.btn-cat').forEach(b => {
                 b.className = "btn-cat shrink-0 px-4 py-2 rounded-xl font-medium text-gray-500 hover:text-magenta text-xs sm:text-sm transition";
             });
-            if (btn) btn.className = "btn-cat shrink-0 px-4 py-2 rounded-xl font-bold bg-magenta text-white text-xs sm:text-sm transition shadow-sm";
+            btn.className = "btn-cat shrink-0 px-4 py-2 rounded-xl font-bold bg-magenta text-white text-xs sm:text-sm transition shadow-sm";
 
-            filtrarProdutos();
+            if (cat === 'todos') {
+                renderizarProdutos(produtos);
+            } else {
+                renderizarProdutos(produtos.filter(p => p.categoria === cat));
+            }
         }
 
         function filtrarProdutos() {
-            const termo = document.getElementById('campo-busca').value.toLowerCase().trim();
-            const filtrados = produtosAginaSabores.filter(p => {
-                const bateCategoria = (categoriaAtual === 'todos' || p.categoria === categoriaAtual);
-                const bateTexto = p.nome.toLowerCase().includes(termo) || p.descricao.toLowerCase().includes(termo);
-                return bateCategoria && bateTexto;
-            });
+            const termo = document.getElementById('campo-busca').value.toLowerCase();
+            const filtrados = produtos.filter(p => p.nome.toLowerCase().includes(termo) || p.desc.toLowerCase().includes(termo));
             renderizarProdutos(filtrados);
         }
 
-        function adicionarDireto(idProduto) {
-            const produto = produtosAginaSabores.find(p => p.id === idProduto);
-            if (!produto) return;
+        function adicionarAoCarrinho(id) {
+            const item = produtos.find(p => p.id === id);
+            const existe = carrinho.find(i => i.nome === item.nome);
 
-            const item = {
-                idCart: Date.now(),
-                id: produto.id,
-                nome: produto.nome,
-                detalhes: produto.categoria.toUpperCase(),
-                preco: produto.precoBase,
-                qtd: 1
-            };
-
-            carrinho.push(item);
-            atualizarCarrinho();
-            toggleCarrinho(true);
-        }
-
-        function adicionarPromoAoCarrinho(nomePromo, preco, detalhes) {
-            const itemPromo = {
-                idCart: Date.now(),
-                id: 999,
-                nome: `🎁 ${nomePromo}`,
-                detalhes: detalhes,
-                preco: preco,
-                qtd: 1
-            };
-            carrinho.push(itemPromo);
-            atualizarCarrinho();
-            toggleCarrinho(true);
-        }
-
-        function removerItemCarrinho(idCart) {
-            carrinho = carrinho.filter(i => i.idCart !== idCart);
+            if (existe) {
+                existe.qtd += 1;
+            } else {
+                carrinho.push({ nome: item.nome, preco: item.preco, qtd: 1, detalhe: '' });
+            }
             atualizarCarrinho();
         }
 
-        function alterarQuantidade(idCart, delta) {
-            const item = carrinho.find(i => i.idCart === idCart);
-            if (item) {
-                item.qtd += delta;
-                if (item.qtd <= 0) {
-                    removerItemCarrinho(idCart);
-                    return;
-                }
+        function adicionarPromoAoCarrinho(nome, preco, detalhe) {
+            const existe = carrinho.find(i => i.nome === nome);
+            if (existe) {
+                existe.qtd += 1;
+            } else {
+                carrinho.push({ nome: nome, preco: preco, qtd: 1, detalhe: detalhe });
+            }
+            atualizarCarrinho();
+            toggleCarrinho();
+        }
+
+        function alterarQuantidade(index, delta) {
+            carrinho[index].qtd += delta;
+            if (carrinho[index].qtd <= 0) {
+                carrinho.splice(index, 1);
             }
             atualizarCarrinho();
         }
 
         function atualizarCarrinho() {
             const container = document.getElementById('itens-carrinho');
-            const headerCount = document.getElementById('cart-count-header');
-            const floatCounts = document.querySelectorAll('#cart-count-float');
+            const totalEl = document.getElementById('total-carrinho');
+            const countHeader = document.getElementById('cart-count-header');
+            const countMobile = document.getElementById('cart-count-mobile');
 
-            container.innerHTML = "";
-            let totalItens = 0;
+            const totalQtd = carrinho.reduce((sum, item) => sum + item.qtd, 0);
+            countHeader.innerText = totalQtd;
+            countMobile.innerText = totalQtd;
 
             if (carrinho.length === 0) {
-                container.innerHTML = `<div class="text-center py-12 text-gray-400">
-                    <i class="fa-solid fa-basket-shopping text-4xl mb-3 block text-magenta/40"></i>
-                    <p class="text-xs sm:text-sm">Seu carrinho está vazio.</p>
-                </div>`;
-            } else {
-                carrinho.forEach(item => {
-                    const subtotal = item.preco * item.qtd;
-                    totalItens += item.qtd;
-
-                    const itemDiv = document.createElement('div');
-                    itemDiv.className = "bg-gray-50 p-3 rounded-xl border border-gray-100 space-y-2 relative group";
-                    itemDiv.innerHTML = `
-                        <div class="flex items-start justify-between pr-6">
-                            <div>
-                                <h4 class="font-bold text-gray-800 text-xs sm:text-sm">${item.nome}</h4>
-                                <p class="text-[10px] sm:text-xs text-magenta font-medium leading-snug">${item.detalhes}</p>
-                            </div>
-                            <span class="font-bold text-magenta text-xs">${subtotal.toLocaleString('pt-MZ')} MZN</span>
-                        </div>
-                        
-                        <button onclick="removerItemCarrinho(${item.idCart})" title="Remover item" class="absolute top-2.5 right-2.5 text-red-400 hover:text-red-600 p-1 text-xs">
-                            <i class="fa-solid fa-trash-can"></i>
-                        </button>
-
-                        <div class="flex items-center justify-between border-t border-gray-200/60 pt-2">
-                            <span class="text-[10px] text-gray-400">${item.preco.toLocaleString('pt-MZ')} MZN un.</span>
-                            <div class="flex items-center border border-gray-200 rounded-lg bg-white overflow-hidden">
-                                <button onclick="alterarQuantidade(${item.idCart}, -1)" class="px-2 py-0.5 text-gray-600 hover:bg-gray-100 text-xs font-bold">-</button>
-                                <span class="px-2 text-xs font-bold text-gray-800">${item.qtd}</span>
-                                <button onclick="alterarQuantidade(${item.idCart}, 1)" class="px-2 py-0.5 text-gray-600 hover:bg-gray-100 text-xs font-bold">+</button>
-                            </div>
-                        </div>
-                    `;
-                    container.appendChild(itemDiv);
-                });
+                container.innerHTML = `<p class="text-xs text-gray-500 text-center py-8">Seu carrinho está vazio no momento.</p>`;
+                totalEl.innerText = "0 Mt";
+                return;
             }
 
-            if (headerCount) headerCount.innerText = totalItens;
-            floatCounts.forEach(fc => fc.innerText = totalItens);
-            atualizarTotalCarrinho();
+            container.innerHTML = '';
+            let totalVal = 0;
+
+            carrinho.forEach((item, idx) => {
+                const subtotal = item.preco * item.qtd;
+                totalVal += subtotal;
+
+                const row = document.createElement('div');
+                row.className = "flex items-center justify-between border-b border-gray-100 pb-3";
+                row.innerHTML = `
+                    <div>
+                        <h4 class="font-bold text-xs text-gray-800">${item.nome}</h4>
+                        ${item.detalhe ? `<p class="text-[10px] text-gray-500">${item.detalhe}</p>` : ''}
+                        <span class="text-xs font-semibold text-magenta">${item.preco} Mt x ${item.qtd}</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button onclick="alterarQuantidade(${idx}, -1)" class="w-6 h-6 bg-gray-100 rounded-md font-bold text-gray-600 hover:bg-gray-200 flex items-center justify-center text-xs">-</button>
+                        <span class="text-xs font-bold">${item.qtd}</span>
+                        <button onclick="alterarQuantidade(${idx}, 1)" class="w-6 h-6 bg-magenta text-white rounded-md font-bold hover:bg-magenta-dark flex items-center justify-center text-xs">+</button>
+                    </div>
+                `;
+                container.appendChild(row);
+            });
+
+            totalEl.innerText = `${totalVal} Mt`;
         }
 
-        function atualizarTotalCarrinho() {
-            let subtotal = 0;
-            carrinho.forEach(item => subtotal += (item.preco * item.qtd));
-
-            const opcaoEntrega = document.querySelector('input[name="opcaoEntrega"]:checked')?.value || 'retirada';
-            const taxaDelivery = opcaoEntrega === 'delivery' ? 150 : 0;
-            const totalFinal = subtotal + taxaDelivery;
-
-            document.getElementById('subtotal-carrinho').innerText = `${subtotal.toLocaleString('pt-MZ')} MZN`;
-            document.getElementById('taxa-delivery-valor').innerText = `${taxaDelivery.toLocaleString('pt-MZ')} MZN`;
-            document.getElementById('total-carrinho').innerText = `${totalFinal.toLocaleString('pt-MZ')} MZN`;
-        }
-
-        function toggleCarrinho(forcarAbertura = false) {
-            const modal = document.getElementById('carrinho-modal');
-            if (forcarAbertura || modal.classList.contains('hidden')) {
-                modal.classList.remove('hidden');
-            } else {
-                modal.classList.add('hidden');
-            }
+        function toggleCarrinho() {
+            const modal = document.getElementById('modal-carrinho');
+            modal.classList.toggle('hidden');
         }
 
         function enviarPedidoWhatsApp() {
             if (carrinho.length === 0) {
-                alert("O seu carrinho está vazio.");
+                alert("O seu carrinho está vazio!");
                 return;
             }
 
-            const telefone = "258852210874";
-            const opcaoEntrega = document.querySelector('input[name="opcaoEntrega"]:checked')?.value || 'retirada';
-            const taxaDelivery = opcaoEntrega === 'delivery' ? 150 : 0;
+            const nome = document.getElementById('cliente-nome').value.trim();
+            const endereco = document.getElementById('cliente-endereco').value.trim();
+            const obs = document.getElementById('cliente-obs').value.trim();
 
-            let mensagem = "👋 Olá, Sweet cakes! Gostaria de realizar o seguinte pedido:\n\n";
-
-            let subtotal = 0;
-            carrinho.forEach(item => {
-                const sub = item.preco * item.qtd;
-                subtotal += sub;
-                mensagem += `• *${item.nome}* (${item.detalhes})\n  *Qtd:* ${item.qtd}x | *Subtotal:* ${sub.toLocaleString('pt-MZ')} MZN\n\n`;
-            });
-
-            mensagem += `─────────────\n`;
-            mensagem += `💵 *Subtotal:* ${subtotal.toLocaleString('pt-MZ')} MZN\n`;
-            
-            if (opcaoEntrega === 'delivery') {
-                mensagem += `🛵 *Entrega:* Delivery / Taxa de Passagem (+150 MZN)\n`;
-            } else {
-                mensagem += `🏪 *Entrega:* Retirada no Local (Matola Rio, Paragem Mozal)\n`;
+            if (!nome) {
+                alert("Por favor, informe seu nome para o pedido.");
+                return;
             }
 
-            const totalFinal = subtotal + taxaDelivery;
-            mensagem += `💰 *Total a Pagar:* ${totalFinal.toLocaleString('pt-MZ')} MZN\n\n`;
-            mensagem += `💳 *Método de Pagamento:* M-Pesa\n`;
-            mensagem += `• *Número:* 852210874\n`;
-            mensagem += `• *Nome:* Olinda\n\n`;
-            mensagem += `Por favor, confirmem a disponibilidade do pedido. Obrigado!`;
+            let texto = `*NOVO PEDIDO - SWEET CAKES*\n`;
+            texto += `---------------------------------\n`;
+            texto += `*Cliente:* ${nome}\n`;
+            if (endereco) texto += `*Endereço/Entrega:* ${endereco}\n`;
+            texto += `---------------------------------\n`;
+            texto += `*ITENS DO PEDIDO:*\n`;
 
-            window.open(`https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`, '_blank');
+            let total = 0;
+            carrinho.forEach(item => {
+                const sub = item.preco * item.qtd;
+                total += sub;
+                texto += `• ${item.qtd}x ${item.nome} (${sub} Mt)\n`;
+                if (item.detalhe) texto += `  _Conteúdo: ${item.detalhe}_\n`;
+            });
+
+            texto += `---------------------------------\n`;
+            texto += `*TOTAL ESTIMADO:* ${total} Mt\n`;
+            if (obs) texto += `*Observações:* ${obs}\n`;
+            texto += `---------------------------------\n`;
+            texto += `Obrigado por escolher a Sweet cakes!`;
+
+            const numeroTelefone = "258846135922";
+            const url = `https://wa.me/${numeroTelefone}?text=${encodeURIComponent(texto)}`;
+            window.open(url, '_blank');
         }
 
-        function calcularEvento(e) {
-            e.preventDefault();
-            const pessoas = parseInt(document.getElementById('calcPessoas').value);
-            const tipo = document.getElementById('calcTipo').value;
+        function calcularFesta() {
+            const num = parseInt(document.getElementById('num-convidados').value);
+            const res = document.getElementById('resultado-calculadora');
 
-            if (!pessoas || pessoas < 1) return;
+            if (isNaN(num) || num <= 0) {
+                alert("Por favor, informe um número válido de convidados.");
+                return;
+            }
 
-            const salgadosDuzias = Math.ceil((pessoas * 6) / 12);
-            let boloSugerido = "Forma F18 (1.350 MZN)";
+            let bolo = "";
+            let salgados = `${num * 5} unidades (${Math.ceil((num * 5) / 12)} Dúzias recomendadas)`;
 
-            if (pessoas > 12 && pessoas <= 20) boloSugerido = "Forma F20 (1.500 MZN)";
-            else if (pessoas > 20 && pessoas <= 30) boloSugerido = "Forma F22 (2.500 MZN)";
-            else if (pessoas > 30 && pessoas <= 40) boloSugerido = "Forma F26 (3.000 MZN)";
-            else if (pessoas > 40) boloSugerido = "Forma F30 (3.500 MZN)";
+            if (num <= 10) {
+                bolo = "Bolo Tamanho F18";
+            } else if (num <= 18) {
+                bolo = "Bolo Tamanho F20";
+            } else if (num <= 25) {
+                bolo = "Bolo Tamanho F22";
+            } else {
+                bolo = "Bolo Tamanho F26 ou 2 Bolos Médios";
+            }
 
-            document.getElementById('resSalgados').innerText = `${salgadosDuzias} dúzias`;
-            document.getElementById('resBolo').innerText = boloSugerido;
-
-            ultimoCalculoEvento = { pessoas, tipo, salgadosDuzias, boloSugerido };
-            document.getElementById('resultadoCalculadora').classList.remove('hidden');
+            document.getElementById('calc-bolo').innerText = bolo;
+            document.getElementById('calc-salgados').innerText = salgados;
+            res.classList.remove('hidden');
         }
 
-        function enviarCalculoWhatsApp() {
-            if (!ultimoCalculoEvento) return;
-            const telefone = "258852210874";
-            
-            let msg = `👋 Olá, Sweet cakes!\n\nUsei a calculadora no site para o meu evento e gostaria de solicitar um orçamento:\n\n`;
-            msg += `👥 *Nº de Convidados:* ${ultimoCalculoEvento.pessoas}\n`;
-            msg += `🎉 *Tipo de Evento:* ${ultimoCalculoEvento.tipo}\n\n`;
-            msg += `📌 *Estimativa Gerada:*\n`;
-            msg += `• *Salgados:* ${ultimoCalculoEvento.salgadosDuzias} dúzias\n`;
-            msg += `• *Bolo:* ${ultimoCalculoEvento.boloSugerido}\n\n`;
-            msg += `💳 *Pagamento M-Pesa:* 852210874 (Olinda)\n\n`;
-            msg += `Gostaria de verificar disponibilidade para a minha data!`;
-
-            window.open(`https://wa.me/${telefone}?text=${encodeURIComponent(msg)}`, '_blank');
+        function abrirZoom(src) {
+            document.getElementById('img-zoom').src = src;
+            document.getElementById('modal-zoom').classList.remove('hidden');
         }
+
+        function fecharZoom() {
+            document.getElementById('modal-zoom').classList.add('hidden');
+        }
+
+        function tratarErroImagem(img) {
+            img.onerror = null;
+            img.src = 'https://via.placeholder.com/400x400/e20074/FFFFFF?text=Sweet+Cakes';
+        }
+
+        // INICIALIZAÇÃO DA PÁGINA
+        window.onload = () => {
+            renderizarProdutos(produtos);
+        };
     </script>
 </body>
 </html>
